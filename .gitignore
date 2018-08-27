@@ -21,3 +21,11 @@ yarn-error.log*
 
 # React Native Tools extension
 .vscode/.react
+
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml

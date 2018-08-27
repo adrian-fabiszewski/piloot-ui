@@ -1,21 +1,31 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
 
-export default class App extends React.Component {
+class Blink extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { isShowingText: true };
+
+    // Toggle the state every second
+    setInterval(() => {
+      this.setState(previousState => ({
+        isShowingText: !previousState.isShowingText,
+      }));
+    }, 1000);
+  }
+
+  render() {
+    const display = this.state.isShowingText ? this.props.text : ' ';
+    return <Text>{display}</Text>;
+  }
+}
+
+export default class BlinkApp extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Hello Piloot!</Text>
+      <View>
+        <Blink text="I love to blink" />
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
