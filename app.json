@@ -1,6 +1,8 @@
 {
+  "name": "piloot",
+  "displayName": "piloot",
   "expo": {
-    "name": "Piloot",
+    "name": "piloot",
     "slug": "piloot-ui",
     "sdkVersion": "27.0.0"
   }
