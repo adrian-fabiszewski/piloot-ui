@@ -1,30 +1,15 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
+import { VideoPlayer } from './src/component/video-player';
 
-class Blink extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isShowingText: true };
-
-    // Toggle the state every second
-    setInterval(() => {
-      this.setState(previousState => ({
-        isShowingText: !previousState.isShowingText,
-      }));
-    }, 1000);
-  }
-
-  render() {
-    const display = this.state.isShowingText ? this.props.text : ' ';
-    return <Text>{display}</Text>;
-  }
-}
-
-export default class BlinkApp extends Component {
+export default class PilootApp extends Component {
   render() {
     return (
-      <View>
-        <Blink text="I love to blink" />
+      <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, backgroundColor: 'powderblue' }}>
+          <VideoPlayer />
+        </View>
+        <View style={{ flex: 1, backgroundColor: 'steelblue' }} />
       </View>
     );
   }
