@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { VideoPlayer } from './src/component/video-player';
+import VideoPlayer from './src/component/video-player';
 
 export default class PilootApp extends Component {
   render() {

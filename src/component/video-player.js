@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
-import YouTube from 'react-native-youtube';
+import { Text, View, Dimensions, WebView } from 'react-native';
 
-export class VideoPlayer extends Component {
+export default class VideoPlayer extends Component {
   render() {
+    const { width } = Dimensions.get('window');
+
     return (
-      <YouTube
-        apiKey="key"
-        videoId="Y0w40sZw99k" // The YouTube video ID
-        play // control playback of video with true/false
-        fullscreen={false} // control whether the video should play in fullscreen or inline
-        loop // control whether the video should loop when ended
-        onReady={e => this.setState({ isReady: true })}
-        onChangeState={e => this.setState({ status: e.state })}
-        onChangeQuality={e => this.setState({ quality: e.quality })}
-        onError={e => this.setState({ error: e.error })}
-        style={{
-          alignSelf: 'stretch',
-          height: 300
-        }}
-      />
+      <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, backgroundColor: '#F5FCFF', justifyContent: 'flex-end' }}>
+          <Text style={{ textAlign: 'center', bottom: 10, fontSize: 24 }}> Piloot Route </Text>
+        </View>
+        <View style={{ flex: 3, backgroundColor: '#808080', alignItems: 'center' }}>
+          <WebView
+            style={{ height: 300, width }}
+            source={{ uri: 'https://www.youtube.com/embed/eRQRTk9CLpo' }}
+            renderError={() => alert('Internet connection error')}
+          />
+        </View>
+      </View>
     );
-    // return <Text style={{ position: 'absolute', bottom: 0 }}>{this.props.text}</Text>;
   }
 }
