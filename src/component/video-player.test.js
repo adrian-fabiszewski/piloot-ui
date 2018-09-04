@@ -1,11 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow } from 'enzyme';
 import { View } from 'react-native';
 import VideoPlayer from './video-player';
-
-Enzyme.configure({ adapter: new Adapter() });
 
 it('Video Player renders without crashing', () => {
   const rendered = renderer.create(<VideoPlayer />).toJSON();
