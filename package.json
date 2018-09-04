@@ -27,7 +27,8 @@
     "test": "jest --coverage --forceExit"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "setupTestFrameworkScriptFile": "./src/test/setupTest.js"
   },
   "dependencies": {
     "babel-jest": "^23.4.2",
