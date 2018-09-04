@@ -2,14 +2,14 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import { View } from 'react-native';
-import VideoPlayer from './video-player';
+import VideoPlayer from './VideoPlayer';
 
 it('Video Player renders without crashing', () => {
   const rendered = renderer.create(<VideoPlayer />).toJSON();
   expect(rendered).toBeTruthy();
 });
 
-test('Video Player renders correctly', () => {
+it('Video Player renders matches snapshot', () => {
   const rendered = renderer.create(<VideoPlayer />).toJSON();
   expect(rendered).toMatchSnapshot();
 });
