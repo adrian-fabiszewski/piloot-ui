@@ -27,12 +27,15 @@
     "test": "jest --coverage --forceExit"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "react-native"
   },
   "dependencies": {
+    "babel-jest": "^23.4.2",
+    "enzyme": "^3.5.1",
+    "enzyme-adapter-react-16": "^1.1.0",
     "expo": "^27.0.1",
     "react": "16.3.1",
-    "react-native": "~0.55.2",
-    "react-native-youtube": "^1.1.0"
+    "react-dom": "^16.3.3",
+    "react-native": "~0.55.2"
   }
 }
